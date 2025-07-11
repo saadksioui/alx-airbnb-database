@@ -18,3 +18,20 @@ This directory contains advanced SQL queries using JOINs to retrieve relational 
 
 - `joins_queries.sql`: SQL queries
 - `README.md`: This documentation
+
+# Subquery Practice – Airbnb Clone Database
+
+This file includes both correlated and non-correlated SQL subqueries that help extract specific insights from the database.
+
+## Queries Included
+
+1. **Non-Correlated Subquery**
+   Retrieves all properties that have an average review rating greater than 4.0.
+
+2. **Correlated Subquery**
+   Retrieves all users who have made more than 3 bookings.
+
+## File List
+
+- `subqueries.sql`: SQL code for subqueries
+- `README.md`: Description of the queries
