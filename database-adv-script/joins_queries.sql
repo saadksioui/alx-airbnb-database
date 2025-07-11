@@ -42,26 +42,26 @@ FULL OUTER JOIN
 
 -- Alternative for MySQL (emulating FULL OUTER JOIN using UNION of LEFT and RIGHT JOIN)
 -- Uncomment this version if using MySQL:
--- SELECT
---     u.user_id,
---     u.first_name,
---     u.last_name,
---     b.booking_id,
---     b.start_date,
---     b.end_date
--- FROM
---     User u
--- LEFT JOIN
---     Booking b ON u.user_id = b.user_id
--- UNION
--- SELECT
---     u.user_id,
---     u.first_name,
---     u.last_name,
---     b.booking_id,
---     b.start_date,
---     b.end_date
--- FROM
---     Booking b
--- RIGHT JOIN
---     User u ON u.user_id = b.user_id;
+SELECT
+    u.user_id,
+    u.first_name,
+    u.last_name,
+    b.booking_id,
+    b.start_date,
+    b.end_date
+FROM
+    User u
+LEFT JOIN
+    Booking b ON u.user_id = b.user_id
+UNION
+SELECT
+    u.user_id,
+    u.first_name,
+    u.last_name,
+    b.booking_id,
+    b.start_date,
+    b.end_date
+FROM
+    Booking b
+RIGHT JOIN
+    User u ON u.user_id = b.user_id;
