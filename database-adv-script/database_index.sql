@@ -1,15 +1,28 @@
--- Indexes for performance optimization
+-- Example query before adding indexes
+EXPLAIN ANALYZE
+SELECT * FROM Booking WHERE user_id = 'some-user-uuid';
 
--- User Table
-CREATE INDEX idx_user_user_id ON User(user_id);
-
--- Booking Table
-CREATE INDEX idx_booking_booking_id ON Booking(booking_id);
+-- Create index on Booking.user_id for faster lookups
 CREATE INDEX idx_booking_user_id ON Booking(user_id);
-CREATE INDEX idx_booking_property_id ON Booking(property_id);
 
--- Property Table
-CREATE INDEX idx_property_property_id ON Property(property_id);
+-- Example query after adding indexes
+EXPLAIN ANALYZE
+SELECT * FROM Booking WHERE user_id = 'some-user-uuid';
 
--- Review Table
-CREATE INDEX idx_review_property_id ON Review(property_id);
+-- Similarly for Property table
+EXPLAIN ANALYZE
+SELECT * FROM Property WHERE location = 'New York';
+
+CREATE INDEX idx_property_location ON Property(location);
+
+EXPLAIN ANALYZE
+SELECT * FROM Property WHERE location = 'New York';
+
+-- For User table
+EXPLAIN ANALYZE
+SELECT * FROM User WHERE email = 'user@example.com';
+
+CREATE INDEX idx_user_email ON User(email);
+
+EXPLAIN ANALYZE
+SELECT * FROM User WHERE email = 'user@example.com';
