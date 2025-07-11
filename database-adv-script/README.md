@@ -35,3 +35,20 @@ This file includes both correlated and non-correlated SQL subqueries that help e
 
 - `subqueries.sql`: SQL code for subqueries
 - `README.md`: Description of the queries
+
+# Aggregations and Window Functions – Airbnb Clone Database
+
+This file demonstrates usage of SQL aggregation and window functions to analyze data patterns in the Airbnb Clone project.
+
+## Queries Included
+
+1. **Total Bookings per User**
+   Counts the total number of bookings each user has made using `COUNT()` and `GROUP BY`.
+
+2. **Property Booking Rank**
+   Uses `RANK()` window function to rank properties based on how many bookings they've received.
+
+## File List
+
+- `aggregations_and_window_functions.sql`: Contains the SQL queries
+- `README.md`: Describes query purpose and logic
